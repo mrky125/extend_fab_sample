@@ -30,4 +30,78 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+    <!-- Almost copied from https://medium.com/nerd-for-tech/how-to-add-extended-floating-action-button-in-android-android-studio-java-481cc9b3cdcb -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".MainActivity"
+        tools:ignore="HardcodedText">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/add_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/black"
+            app:icon="@drawable/shape_circle"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!--Floating action button for add alarm-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_alarm_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/black"
+            app:fabSize="normal"
+            app:tint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/add_fab"
+            app:layout_constraintEnd_toEndOf="@+id/add_fab"
+            app:srcCompat="@android:drawable/ic_dialog_email"
+            android:contentDescription="@string/app_name" />
+
+        <!--Action name text for the add alarm button-->
+        <TextView
+            android:id="@+id/add_alarm_action_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Add Alarm"
+            app:layout_constraintBottom_toBottomOf="@+id/add_alarm_fab"
+            app:layout_constraintEnd_toStartOf="@+id/add_alarm_fab"
+            app:layout_constraintTop_toTopOf="@+id/add_alarm_fab" />
+
+        <!--Floating action button for add person-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_person_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/black"
+            app:fabSize="normal"
+            app:tint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/add_alarm_fab"
+            app:layout_constraintEnd_toEndOf="@+id/add_alarm_fab"
+            app:layout_constraintStart_toStartOf="@+id/add_alarm_fab"
+            app:srcCompat="@android:drawable/ic_dialog_email"
+            android:contentDescription="@string/app_name" />
+
+        <!--Action name text for the add person button-->
+        <TextView
+            android:id="@+id/add_person_action_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Add Person"
+            app:layout_constraintBottom_toBottomOf="@+id/add_person_fab"
+            app:layout_constraintEnd_toStartOf="@+id/add_person_fab"
+            app:layout_constraintTop_toTopOf="@+id/add_person_fab" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
